@@ -1,25 +1,6 @@
 import json
-class Roommate:
-    def __init__(self, name, shortname):
-        self.name = name
-        self.shortname = shortname
-        self.items = []
-        self.total = 0.00
-
-    def __str__(self):
-        return_str = f"{self.name}\n"
-        for item in self.items:
-            return_str += f"${item[0]:<10} {item[1]}\n"
-        return_str += f"{self.total}\n"
-        return return_str
-
-shreetej = Roommate(name="shreetej", shortname="sh")
-shubham = Roommate(name="shubham", shortname="ss")
-ishaan = Roommate(name="ishaan", shortname="ia")
-vaibhav = Roommate(name="vaibhav", shortname="vr")
-
-roommates = [shreetej, shubham, ishaan, vaibhav]
-actions = []
+from handleInput import handleInput
+from objects import roommates
 
 with open('bill.json', 'r') as f:
     data = f.read()
@@ -30,29 +11,13 @@ print()
 for item in order["items"]:
     print(f"QTY: {item['qty']}   PRICE: ${item['price']}   ITEM: {item['item']}")
     for i in range(item["qty"]):
-        whose = input(f"{i}/{item["qty"]}: ").lower()
-        while whose not in [r.shortname for r in roommates]:
-            print("Invalid input  [", whose, "]  can only be - ", [r.shortname for r in roommates])
-            whose = input(f"{i}/{item["qty"]}: ").lower()
+        whose = input(f"{i + 1}/{item["qty"]}: ").lower().split(", ")
+        while not (whose == ["-"] or all(w in [r.shortname for r in roommates] for w in whose)):
+            print("Invalid input", whose, "  can only be - ", [r.shortname for r in roommates])
+            whose = input(f"{i + 1}/{item["qty"]}: ").lower().split(", ")
         
-        match whose:
-            case "sh":
-                shreetej.items.append((item["price"], item["item"]))
-                shreetej.total += item["price"]
-                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
-            case "ss":
-                shubham.items.append((item["price"], item["item"]))
-                shubham.total += item["price"]
-                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
-            case "ia":
-                ishaan.items.append((item["price"], item["item"]))
-                ishaan.total += item["price"]
-                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
-            case "vr":
-                vaibhav.items.append((item["price"], item["item"]))
-                vaibhav.total += item["price"]
-                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
-            
+        handleInput(whose, item)            
+        # TODO instead of handling each quantity individually let users enter an array of strings
 
 
 tax_divided = order["tax"]/4
