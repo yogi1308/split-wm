@@ -19,6 +19,7 @@ ishaan = Roommate(name="ishaan", shortname="ia")
 vaibhav = Roommate(name="vaibhav", shortname="vr")
 
 roommates = [shreetej, shubham, ishaan, vaibhav]
+actions = []
 
 with open('bill.json', 'r') as f:
     data = f.read()
@@ -38,15 +39,19 @@ for item in order["items"]:
             case "sh":
                 shreetej.items.append((item["price"], item["item"]))
                 shreetej.total += item["price"]
+                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
             case "ss":
                 shubham.items.append((item["price"], item["item"]))
                 shubham.total += item["price"]
+                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
             case "ia":
                 ishaan.items.append((item["price"], item["item"]))
                 ishaan.total += item["price"]
+                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
             case "vr":
                 vaibhav.items.append((item["price"], item["item"]))
                 vaibhav.total += item["price"]
+                actions.append({"roommate": shreetej.name, "item": item["item"], "price": item["price"]})
             
 
 
