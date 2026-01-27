@@ -17,7 +17,6 @@ for item in order["items"]:
     
     for individual in whose:
         handleInput(individual, item, len(whose))            
-    # TODO instead of handling each quantity individually let users enter an array of strings
 
 
 tax_divided = order["tax"]/4
