@@ -9,7 +9,7 @@ class Roommate:
         return_str = f"{self.name}\n"
         for item in self.items:
             return_str += f"${item[0]:<10} {item[1]}\n"
-        return_str += f"{self.total:<10} FINAL\n"
+        return_str += f"{self.total:<10.4f} FINAL\n"
         return return_str
 
 shreetej = Roommate(name="shreetej", shortname="sh")
