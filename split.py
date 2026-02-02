@@ -16,7 +16,7 @@ while i < len(order["items"]):
     whose = input().lower().replace(' ', '').split(",")
     while not (whose == ["-"] or all(w in [r.shortname for r in roommates] for w in whose)):
         print("Invalid input", whose, "  can only be - ", [r.shortname for r in roommates])
-        whose = input().lower().replace(' ', '').split(", ")
+        whose = input().lower().replace(' ', '').split(",")
     
     if "-" in whose:
         if i > 0:
@@ -40,7 +40,7 @@ while i < len(order["items"]):
     i += 1
 
 
-tax_divided = order["tax"]/4
+tax_divided = round(order["tax"]/4, 5)
 for roommate in roommates:
     roommate.items.append((tax_divided, "tax"))
     roommate.total += tax_divided
@@ -48,4 +48,4 @@ for roommate in roommates:
     print("\n")
     print(roommate)
 
-print("final: ",  [f"{r.name}, {r.total:.4f}" for r in roommates])
+print("final: ",  [f"{r.name}, {r.total:.5f}" for r in roommates])
