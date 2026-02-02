@@ -10,12 +10,12 @@ def handleInput(whose, item, len_whose):
         case "ss":
             shubham.items.append((price, item["item"]))
             shubham.total += price
-            actions.append({"roommate": shreetej.name, "item": item["item"], "price": price})
+            actions.append({"roommate": shubham.name, "item": item["item"], "price": price})
         case "ia":
             ishaan.items.append((price, item["item"]))
             ishaan.total += price
-            actions.append({"roommate": shreetej.name, "item": item["item"], "price": price})
+            actions.append({"roommate": ishaan.name, "item": item["item"], "price": price})
         case "vr":
             vaibhav.items.append((price, item["item"]))
             vaibhav.total += price
-            actions.append({"roommate": shreetej.name, "item": item["item"], "price": price})
+            actions.append({"roommate": vaibhav.name, "item": item["item"], "price": price})

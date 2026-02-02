@@ -40,7 +40,7 @@ while i < len(order["items"]):
     i += 1
 
 
-tax_divided = round(order["tax"]/4, 5)
+tax_divided = round(order["tax"]/len(roommates), 5)
 for roommate in roommates:
     roommate.items.append((tax_divided, "tax"))
     roommate.total += tax_divided
