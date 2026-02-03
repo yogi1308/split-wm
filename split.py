@@ -7,6 +7,14 @@ with open('bill.json', 'r') as f:
 
 order = json.loads(data)
 
+def log():
+    for roommate in roommates:
+        roommate.items.append((tax_divided, "tax"))
+        roommate.total += tax_divided
+
+        print("\n")
+        print(roommate)
+
 print()
 i = 0
 history = []
@@ -34,6 +42,10 @@ while i < len(order["items"]):
             print("Cannot undo at start")
         continue
 
+    elif "log" in whose:
+        log()
+        continue
+
     history.append(whose)
     for individual in whose:
         handleInput(individual, item, len(whose))
@@ -41,11 +53,6 @@ while i < len(order["items"]):
 
 
 tax_divided = round(order["tax"]/len(roommates), 5)
-for roommate in roommates:
-    roommate.items.append((tax_divided, "tax"))
-    roommate.total += tax_divided
-
-    print("\n")
-    print(roommate)
+log()
 
 print("final: ",  [f"{r.name}, {r.total:.5f}" for r in roommates])
