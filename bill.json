@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "item": "Fresh Roma Tomato, Each",
+      "price": 5.77,
+      "qty": 25
+    },
+    {
+      "item": "Fresh Whole Red Onion, Each",
+      "price": 10.72,
+      "qty": 18
+    },
+    {
+      "item": "Downy Unstopables In-Wash Scent Booster Laundry Beads, Fresh Scent, 5.7 oz",
+      "price": 4.94,
+      "qty": 1
+    },
+    {
+      "item": "Great Value Original Plain Nonfat Yogurt, 32 oz Tub",
+      "price": 2.64,
+      "qty": 1
+    },
+    {
+      "item": "Great Value Medium Soft Taco Flour Tortillas, 17.5 oz Bag, 10 Count (Shelf Stable)",
+      "price": 3.96,
+      "qty": 2
+    },
+    {
+      "item": "Great Value Vegetable Oil, Heart Healthy and Versatile, 1 Gallon Bottle",
+      "price": 8.52,
+      "qty": 1
+    },
+    {
+      "item": "Tide Simply All-in-One Liquid Laundry Detergent, Refreshing Breeze Scent, 182 fl oz, 138 Loads",
+      "price": 14.94,
+      "qty": 1
+    },
+    {
+      "item": "Great Value Large White Eggs, 18 Count",
+      "price": 4.94,
+      "qty": 2
+    },
+    {
+      "item": "Fresh Garlic Sleeve, 3 Count",
+      "price": 1.54,
+      "qty": 1
+    },
+    {
+      "item": "(2 pack) Fresh Thai Chile Peppers, 4 Ounce Bag",
+      "price": 5.96,
+      "qty": 1
+    },
+    {
+      "item": "99 Ranch Cilantro, Fresh Cilantro Leaves - Aromatic Herb For Salsas, Garnish And Cooking, Produce, 1 bunch",
+      "price": 0.99,
+      "qty": 1
+    }
+  ],
+  "tax": 2.47
+}

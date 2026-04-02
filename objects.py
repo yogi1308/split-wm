@@ -12,10 +12,12 @@ class Roommate:
         return_str += f"{self.total:<10.4f} FINAL\n"
         return return_str
 
+
 shreetej = Roommate(name="shreetej", shortname="sh")
 shubham = Roommate(name="shubham", shortname="ss")
 ishaan = Roommate(name="ishaan", shortname="ia")
 vaibhav = Roommate(name="vaibhav", shortname="vr")
 
 roommates = [shreetej, shubham, ishaan, vaibhav]
-actions = []    
+actions = []
+
